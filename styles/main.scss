@@ -27,27 +27,47 @@ $safe-area-bottom: 90px;
   }
 }
 
+.background {
+  filter: blur(15px);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  //padding-bottom: 150%;
+  overflow: hidden;
+  z-index: -2;
+}
+.background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 100%;
+  background-color: #000;
   background-image: url("/images/DannyCiscoLogoBlack.jpg");
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-position: center; // or 'center', 'left', etc.
   background-size: auto 125%; // or 'cover', etc.
   background-position-y: 0;
   padding-top: 0px;
-  padding-bottom: 250px;
-  margin-top: $safe-area-top;
+  padding-bottom: 280px;
+  //margin-top: $safe-area-top;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
-  color: rgb(233, 125, 224);
-  background-color: $color-accent-1;
+  color: $color-accent-2;
+  background-color: black;
   background-image: radial-gradient(
     circle at center,
     rgba(236, 93, 212, 0) 0%,
@@ -86,7 +106,7 @@ p {
 .logo {
   position: absolute;
   margin: 0px;
-  margin-top: $safe-area-top;
+  //margin-top: $safe-area-top;
   height: 100%;
   border: none;
   width: 150px;
@@ -140,9 +160,10 @@ p {
 }
 
 .openbtn {
+  z-index: 0;
   font-size: 20px;
   cursor: pointer;
-  background-color: $color-accent-1;
+  background-color: $color-accent-2;
   color: #ffffff;
   padding: 10px 15px;
   margin: 4px;
@@ -161,7 +182,7 @@ p {
 .portfolio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3px;
+  gap: 30px;
 }
 
 .photo-card {
@@ -244,7 +265,7 @@ footer {
   background-color: $color-primary;
   text-align: center;
   padding: 10px;
-  padding-bottom: $safe-area-bottom;
+  // padding-bottom: $safe-area-bottom;
   position: fixed;
   left: 0;
   bottom: 0;
